@@ -1,0 +1,14 @@
+{
+	auto_https off
+	admin off
+}
+
+:80
+
+log {
+	output stdout
+}
+
+reverse_proxy * {$UPSTREAM_ADDRESS} {
+	header_up Host {upstream_hostport}
+}
