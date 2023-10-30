@@ -11,4 +11,5 @@ log {
 
 reverse_proxy * {$UPSTREAM_ADDRESS} {
 	header_up Host {upstream_hostport}
+	trusted_proxies 10.0.1.0/24
 }
